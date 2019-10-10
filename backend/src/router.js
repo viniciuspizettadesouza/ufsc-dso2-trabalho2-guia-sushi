@@ -1,5 +1,11 @@
 const express = require('express');
 
-const routes = express.Router();
+const RestaurantController = require('./controller/RestaurantController');
 
-module.exports = routes;
+const router = express.Router();
+
+router.get('/restaurants', RestaurantController.show);
+
+router.post('/store-restaurant', RestaurantController.store);
+
+module.exports = router;
