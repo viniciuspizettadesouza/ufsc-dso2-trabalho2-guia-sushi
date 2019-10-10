@@ -2,15 +2,15 @@ const Restaurant = require('../model/Restaurant');
 
 module.exports = {
 
-    async index(req, res) {
+    async show(req, res) {
+        const { user_id } = req.headers
 
-        const Restaurant = await Restaurant.find({}, function (err, name) {
-            return (null, name)
-        });
-        return res.status(200).send(restaurant);
+        const restaurants = await Restaurant.find({ user: user_id })
+
+        return res.json(restaurants)
     },
 
-    async add(req, res) {
+    async store(req, res) {
         try {
             const newRestaurant = await Restaurant.create(req.body);
             return res.status(200).send({ newRestaurant });
