@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-const routes = require('./routes');
+const router = require('./router');
 
 const server = express();
 
@@ -12,6 +12,6 @@ mongoose.connect('mongodb+srv://zetta:zetta@clusterzetta-mcozz.mongodb.net/traba
 
 server.use(cors());
 server.use(express.json());
-server.use(routes);
+server.use(router);
 
 server.listen(3333);
