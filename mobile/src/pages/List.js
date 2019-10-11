@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { SafeAreaView, ScrollView, StyleSheet, Image, AsyncStorage } from 'react-native'
+import React from 'react'
+import { SafeAreaView, ScrollView, StyleSheet, Image, TouchableWithoutFeedback } from 'react-native'
 
 import RestaurantList from '../components/RestaurantList'
 
 import logo from '../assets/logo.png'
 
 export default function List() {
+
 
     return (
         <SafeAreaView style={styles.container} >
