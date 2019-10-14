@@ -1,13 +1,16 @@
 import React from 'react'
-import { SafeAreaView, ScrollView, StyleSheet, Image, TouchableWithoutFeedback } from 'react-native'
+import {
+    SafeAreaView,
+    ScrollView,
+    StyleSheet,
+    Image
+} from 'react-native'
 
 import RestaurantList from '../components/RestaurantList'
 
 import logo from '../assets/logo.png'
 
-export default function List() {
-
-
+export default function Home() {
     return (
         <SafeAreaView style={styles.container} >
             <Image style={styles.logo} source={logo} />

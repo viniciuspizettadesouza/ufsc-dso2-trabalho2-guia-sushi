@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import {
     SafeAreaView,
     ScrollView,
@@ -7,14 +7,14 @@ import {
     TouchableWithoutFeedback,
 } from 'react-native'
 
-import RestaurantInfo from '../components/RestaurantInfo'
+import RestaurantDescription from '../components/RestaurantDescription'
 
 import logo from '../assets/logo.png'
 
-export default function List({ navigation }) {
+export default function Restaurant({ navigation }) {
 
     function handleNavigate() {
-        navigation.navigate('List')
+        navigation.navigate('Home')
     }
 
     return (
@@ -23,7 +23,7 @@ export default function List({ navigation }) {
                 <Image style={styles.logo} source={logo} />
             </TouchableWithoutFeedback>
             <ScrollView>
-                <RestaurantInfo />
+                <RestaurantDescription />
             </ScrollView>
         </SafeAreaView >
     )

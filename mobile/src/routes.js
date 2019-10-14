@@ -1,13 +1,13 @@
 import { createAppContainer, createSwitchNavigator } from 'react-navigation'
 
-import List from './pages/List'
+import Home from './pages/Home'
 import Restaurant from './pages/Restaurant'
 
 const Routes = createAppContainer(
 
     createSwitchNavigator({
-        List,
-        Restaurant
+        Home,
+        Restaurant,
     })
 )
 

@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { withNavigation } from 'react-navigation'
 import { Text, StyleSheet, } from 'react-native'
 
 import api from '../services/api'
 
-function RestaurantInfo({ navigation }) {
-
+function RestaurantDescription({ navigation }) {
     return (
-        <Text>Test RestaurantInfo</Text>
+        <Text>Test RestaurantDescription</Text>
     )
 }
 
@@ -23,4 +22,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default withNavigation(RestaurantInfo)
+export default withNavigation(RestaurantDescription)
