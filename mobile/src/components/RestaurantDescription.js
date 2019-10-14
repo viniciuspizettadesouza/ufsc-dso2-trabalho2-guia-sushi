@@ -4,7 +4,8 @@ import { View, Text, StyleSheet, FlatList, Image, TouchableOpacity, TouchableWit
 
 import api from '../services/api'
 
-function RestaurantList({ navigation }) {
+function RestaurantDescription({ navigation }) {
+
     const [restaurants, setRestaurants] = useState([])
 
     useEffect(() => {
@@ -17,15 +18,15 @@ function RestaurantList({ navigation }) {
     }, [])
 
     function handleNavigate() {
-        navigation.navigate('Restaurant')
-    }
-    function handleNavigate2() {
-        navigation.navigate('Restaurant')
+        navigation.navigate('Maps')
     }
 
     return (
         <View style={styles.container}>
             <Text style={styles.guide}>Guia de Sushi Wellness</Text>
+            <TouchableOpacity onPress={() => handleNavigate()} style={styles.button} >
+                <Button title="Ver mapa" color="#fffafa" />
+            </TouchableOpacity>
             <FlatList
                 style={styles.list}
                 data={restaurants}
@@ -35,17 +36,11 @@ function RestaurantList({ navigation }) {
                 renderItem={({ item }) => (
                     <View style={styles.listItem}>
                         <Text style={styles.title}>{item.name}</Text>
-                        <TouchableWithoutFeedback onPress={() => handleNavigate()} >
-                            <Image style={styles.thumbnail} source={{ uri: item.thumbnail }} />
-                        </TouchableWithoutFeedback>
-                        <Text >Endereço: <Text style={styles.address}>{item.address}</Text></Text>
-                        <TouchableOpacity style={styles.button}  >
-                            <Button title="Mais informações" color="#fffafa" onPress={() => handleNavigate2() } />
-                        </TouchableOpacity>
+                        <Text>Cardápio: <Text style={styles.address}>{item.menu}</Text></Text>
+                        <Text>Bebidas: <Text style={styles.address}>{item.drinks}<Text> </Text></Text></Text>
                     </View>
-        )}
-    />
-            <Text style={styles.guri}>EH US GURI</Text>
+                )}
+            />
         </View>
     )
 }
@@ -108,4 +103,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default withNavigation(RestaurantList)
+export default withNavigation(RestaurantDescription)

@@ -1,31 +1,28 @@
 import React from 'react'
 import {
     SafeAreaView,
-    ScrollView,
     StyleSheet,
     Image,
     TouchableWithoutFeedback,
 } from 'react-native'
 
-import RestaurantDescription from '../components/RestaurantDescription'
+import MapComponent from '../components/MapComponent'
 
 import logo from '../assets/logo.png'
 
-export default function Restaurant({ navigation }) {
+export default function Maps({ navigation }) {
 
     function handleNavigate() {
-        navigation.navigate('Home')
+        navigation.navigate('Restaurant')
     }
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.container} >
             <TouchableWithoutFeedback onPress={() => handleNavigate()}>
                 <Image style={styles.logo} source={logo} />
             </TouchableWithoutFeedback>
-            <ScrollView>
-                <RestaurantDescription />
-            </ScrollView>
-        </ SafeAreaView >
+            <MapComponent />
+        </SafeAreaView>
     )
 }
 
