@@ -16,7 +16,10 @@ function RestaurantList({ navigation }) {
         loadRestaurants()
     }, [])
 
-    function handleNavigate(id) {
+    function handleNavigate() {
+        navigation.navigate('Restaurant')
+    }
+    function handleNavigate2() {
         navigation.navigate('Restaurant')
     }
 
@@ -32,16 +35,16 @@ function RestaurantList({ navigation }) {
                 renderItem={({ item }) => (
                     <View style={styles.listItem}>
                         <Text style={styles.title}>{item.name}</Text>
-                        <TouchableWithoutFeedback onPress={() => handleNavigate(item._id)} >
+                        <TouchableWithoutFeedback onPress={() => handleNavigate()} >
                             <Image style={styles.thumbnail} source={{ uri: item.thumbnail }} />
                         </TouchableWithoutFeedback>
                         <Text >Endereço: <Text style={styles.address}>{item.address}</Text></Text>
-                        <TouchableOpacity onPress={() => handleNavigate(item._id)} style={styles.button} >
-                            <Button title="Mais informações" color="#fffafa" />
+                        <TouchableOpacity style={styles.button}  >
+                            <Button title="Mais informações" color="#fffafa" onPress={() => handleNavigate2() } />
                         </TouchableOpacity>
                     </View>
-                )}
-            />
+        )}
+    />
             <Text style={styles.guri}>EH US GURI</Text>
         </View>
     )
