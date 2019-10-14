@@ -9,6 +9,8 @@ import {
 
 import RestaurantDescription from '../components/RestaurantDescription'
 
+import Maps from '../components/Maps'
+
 import logo from '../assets/logo.png'
 
 export default function Restaurant({ navigation }) {
@@ -24,8 +26,9 @@ export default function Restaurant({ navigation }) {
             </TouchableWithoutFeedback>
             <ScrollView>
                 <RestaurantDescription />
+                <Maps />
             </ScrollView>
-        </SafeAreaView >
+        </ SafeAreaView >
     )
 }
 
